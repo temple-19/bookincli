@@ -25,10 +25,10 @@ const Register = () => {
     e.preventDefault();
     dispatch({ type: 'LOGIN_START' });
     try {
-      const res = await axios.post('/auth/register', credentials);
+      const res = await axios.post('https://dark-frog-dungarees.cyclic.app/api/auth/register', credentials);
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data.details });
       try {
-        const res = await axios.post('/auth/login', credentials);
+        const res = await axios.post('https://dark-frog-dungarees.cyclic.app/api/auth/login', credentials);
         dispatch({ type: 'LOGIN_SUCCESS', payload: res.data.details });
         navigate('/');
       } catch (error) {
