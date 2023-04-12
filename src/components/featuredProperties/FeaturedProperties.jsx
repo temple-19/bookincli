@@ -2,7 +2,7 @@ import useFetch from '../../hooks/useFetch';
 import './featuredProperties.css';
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch('/hotels?featured=true');
+  const { data, loading, error } = useFetch('https://dark-frog-dungarees.cyclic.app/api/hotels?featured=true');
 
   return (
     <div className="fp">
