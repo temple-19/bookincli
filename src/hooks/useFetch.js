@@ -10,7 +10,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(url);
+        const res = await axios.get("https://dark-frog-dungarees.cyclic.app/api");
         setData(res.data);
       } catch (err) {
         setError(err);
@@ -18,12 +18,12 @@ const useFetch = (url) => {
       setLoading(false);
     };
     fetchData();
-  }, [url]);
+  }, ["https://dark-frog-dungarees.cyclic.app/api"]);
 
   const reFetch = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(url);
+      const res = await axios.get("https://dark-frog-dungarees.cyclic.app/api");
       setData(res.data);
     } catch (err) {
       setError(err);
