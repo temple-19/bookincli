@@ -14,10 +14,10 @@ function App() {
         <Route path="/hotels/:id" element={<Hotel />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="https://chipper-pie-6f9780.netlify.app/hotels" element={<List />} />
-        <Route path="https://chipper-pie-6f9780.netlify.app/hotels/:id" element={<Hotel />} />
-        <Route path="https://chipper-pie-6f9780.netlify.app/login" element={<Login />} />
-        <Route path="https://chipper-pie-6f9780.netlify.app/register" element={<Register />} />
+        <Route path="https://dark-frog-dungarees.cyclic.app/api/hotels" element={<List />} />
+        <Route path="https://dark-frog-dungarees.cyclic.app/api/hotels/:id" element={<Hotel />} />
+        <Route path="https://dark-frog-dungarees.cyclic.app/api/login" element={<Login />} />
+        <Route path="https://dark-frog-dungarees.cyclic.app/api/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
