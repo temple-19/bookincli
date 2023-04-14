@@ -46,7 +46,7 @@ const Navbar = () => {
               <span className="option">Register</span>
             </Link>
             <Link
-              to="/login"
+              to="https://chipper-pie-6f9780.netlify.app/login"
               style={{ color: 'white', textDecoration: 'none' }}
             >
               <span className="option">Login</span>
