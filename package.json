@@ -1,7 +1,6 @@
 {
   "name": "booking",
   "version": "0.1.0",
-  "proxy": "https://dark-frog-dungarees.cyclic.app/api",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
