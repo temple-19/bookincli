@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useFetch = ("https://dark-frog-dungarees.cyclic.app/api") => {
+const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -10,7 +10,7 @@ const useFetch = ("https://dark-frog-dungarees.cyclic.app/api") => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("https://dark-frog-dungarees.cyclic.app/api");
+        const res = await axios.get(url);
         setData(res.data);
       } catch (err) {
         setError(err);
@@ -18,12 +18,12 @@ const useFetch = ("https://dark-frog-dungarees.cyclic.app/api") => {
       setLoading(false);
     };
     fetchData();
-  }, ["https://dark-frog-dungarees.cyclic.app/api"]);
+  }, [url]);
 
   const reFetch = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("https://dark-frog-dungarees.cyclic.app/api");
+      const res = await axios.get(url);
       setData(res.data);
     } catch (err) {
       setError(err);
