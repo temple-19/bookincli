@@ -29,15 +29,16 @@ const Hotel = () => {
   const navigate = useNavigate();
 
   const { dates, options } = useContext(SearchContext);
-
-  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
-  function dayDifference(date1, date2) {
-    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
-    return diffDays;
+  
+   function dayDifference(date1, date2) {
+    const timeDiff = Math.abs(date2 - date1);
+    return timeDiff;
   }
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  const days = dayDifference(
+    dates[0].endDate.slice(8, 10),
+    dates[0].startDate.slice(8, 10)
+  );
 
   const handleOpen = (i) => {
     setSlideNumber(i);
