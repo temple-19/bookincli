@@ -2,6 +2,19 @@ import { Link } from 'react-router-dom';
 import './searchItem.css';
 
 const SearchItem = ({ item }) => {
+  const location = useLocation();
+  const [destination] = useState(location.state.destination);
+  const [dates] = useState(location.state.dates);
+  const [options] = useState(location.state.options);
+
+  const navigate = useNavigate();
+  const { dispatch } = useContext(SearchContext);
+
+  const handleSearch = () => {
+    dispatch({ type: 'NEW_SEARCH', payload: { dates, options } });
+    navigate(`/hotels/${item._id}`, { state: { dates, options } });
+    window.location.reload(false);
+  };
   return (
     <div className="searchItem">
       <img src={item.photos[0]} alt="" className="siImg" />
