@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './searchItem.css';
 import { useContext, useState } from 'react';
 import { SearchContext } from '../../context/SearchContext';
@@ -17,6 +17,7 @@ const SearchItem = ({ item }) => {
     navigate(`/hotels/${item._id}`, { state: { dates, options } });
     window.location.reload(false);
   };
+  // console.log(dates[0].startDate, options);
   return (
     <div className="searchItem">
       <img src={item.photos[0]} alt="" className="siImg" />
@@ -43,7 +44,7 @@ const SearchItem = ({ item }) => {
         <div className="siDetailTexts">
           <span className="siPrice">${item.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
-          <Link to={`/hotels/${item._id}`}>
+          <Link onClick={handleSearch}>
             <button className="siCheckButton">See availability</button>
           </Link>
         </div>
