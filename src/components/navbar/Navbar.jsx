@@ -1,11 +1,12 @@
 import './navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import React from 'react';
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const logout = () => {
     //to clear cookies
@@ -17,6 +18,7 @@ const Navbar = () => {
     // Clear local storage
     localStorage.clear();
     // Reload the page
+    navigate('/');
     window.location.reload();
   };
 
