@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import './searchItem.css';
+import { useContext, useState } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 
 const SearchItem = ({ item }) => {
   const location = useLocation();
